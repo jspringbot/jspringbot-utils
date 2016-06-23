@@ -39,6 +39,32 @@
     <libdoc.output>JSpringBotUtilsLibrary.html</libdoc.output>
   </properties>
 
+  <licenses>
+    <license>
+      <name>Apache 2</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <distributionManagement>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <scm>
+    <connection>scm:git:https://github.com/jspringbot/jspringbot-utils.git</connection>
+    <url>scm:git:https://github.com/jspringbot/jspringbot-utils.git</url>
+    <developerConnection>scm:git:https://github.com/jspringbot/jspringbot-utils.git</developerConnection>
+  </scm>
+
   <dependencies>
     <dependency>
       <groupId>org.jspringbot</groupId>
