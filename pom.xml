@@ -85,7 +85,6 @@
     </developer>
   </developers>
 
-
   <dependencies>
     <dependency>
       <groupId>org.jspringbot</groupId>
