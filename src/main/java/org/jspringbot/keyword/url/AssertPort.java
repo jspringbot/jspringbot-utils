@@ -23,7 +23,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @KeywordInfo(
-        name = "Assert Protocol",
+        name = "Assert Port",
         description = "Asserts URL Protocol.",
         parameters = {"port"})
 public class AssertPort extends AbstractURLKeyword {
