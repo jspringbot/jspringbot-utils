@@ -29,6 +29,7 @@
     <description>jSpringBot Util Keywords</description>
 
     <bean name="statsCollectorHelper" class="org.jspringbot.keyword.stats.StatsCollectorHelper"/>
+    <bean name="urlHelper" class="org.jspringbot.keyword.url.URLHelper"/>
     <bean name="mapSetHelper" class="org.jspringbot.keyword.map.MapSetHelper"/>
 
     <!-- Scan components -->
@@ -37,6 +38,7 @@
     <ctx:component-scan base-package="org.jspringbot.keyword.string" />
     <ctx:component-scan base-package="org.jspringbot.keyword.util" />
     <ctx:component-scan base-package="org.jspringbot.keyword.map" />
+    <ctx:component-scan base-package="org.jspringbot.keyword.url" />
     <ctx:annotation-config/>
 
 </beans>
