@@ -1,6 +1,8 @@
 package org.jspringbot.keyword.url;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.Validate;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
 
@@ -11,10 +13,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 
 public class URLHelper {
 
@@ -49,29 +47,28 @@ public class URLHelper {
     }
 
     public void assertHost(String host) {
-        assertEquals(url.getHost(), host);
+        Validate.isTrue(StringUtils.equals(url.getHost(), host));
     }
 
     public void assertPort(int port) {
-
-        assertEquals(url.getPort(), port);
+        Validate.isTrue(url.getPort() == port);
     }
 
     public void assertProtocol(String protocol) {
-        assertEquals(url.getProtocol(), protocol);
+        Validate.isTrue(StringUtils.equals(url.getProtocol(), protocol));
     }
 
     public void assertPath(String path) {
-        assertEquals(url.getPath(), path);
+        Validate.isTrue(StringUtils.equals(url.getPath(), path));
     }
 
     public void assertParameterCount(int count) {
-        assertEquals(parameterList.size(), count);
+        Validate.isTrue(parameterList.size() == count);
     }
 
     public void assertParameterKeyExist(String name) {
 
-        assertEquals(parameters.containsKey(name), true);
+        Validate.isTrue(parameters.containsKey(name));
     }
 
     public void assertParameter(String name, String value) {
@@ -83,6 +80,6 @@ public class URLHelper {
 
         System.out.println(" ==== name param: " + name + " value param: " + value + " parameter values: " + parameters.get(name) + " parameter exist: " + values.contains(value));
 
-        assertEquals(values.contains(value), true);
+        Validate.isTrue(values.contains(value));
     }
 }
