@@ -21,6 +21,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.jspringbot</groupId>
+    <artifactId>jspringbot-libraries</artifactId>
+    <version>1.5-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>jspringbot-utils</artifactId>
+  <name>jspringbot-utils</name>
+
   <build>
     <plugins>
       <plugin>
@@ -33,18 +43,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <parent>
-    <groupId>org.jspringbot</groupId>
-    <artifactId>jspringbot-libraries</artifactId>
-    <version>1.4</version>
-  </parent>
-
-  <artifactId>jspringbot-utils</artifactId>
-  <version>1.5-SNAPSHOT</version>
-
-  <packaging>jar</packaging>
-  <name>jspringbot-utils</name>
 
   <properties>
     <libdoc.name>JSpringBot Utils Library</libdoc.name>
@@ -101,28 +99,25 @@
     <dependency>
       <groupId>org.jspringbot</groupId>
       <artifactId>jspringbot</artifactId>
-      <version>1.4</version>
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
     </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <optional>true</optional>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-all</artifactId>
-      <version>1.8.0-rc2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
-      <version>${spring.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
