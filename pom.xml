@@ -29,6 +29,7 @@
   </parent>
 
   <artifactId>jspringbot-utils</artifactId>
+  <version>1.5</version>
   <name>jspringbot-utils</name>
 
   <build>
