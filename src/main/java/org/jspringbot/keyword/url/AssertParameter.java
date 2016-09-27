@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 @Component
 @KeywordInfo(
         name = "Assert Parameter",
-        description = "Asserts parameter key value pair exist.",
+        description = "classpath:desc/AssertParameter.txt",
         parameters = {"parameter key", "parameter value"})
 public class AssertParameter extends AbstractURLKeyword {
 

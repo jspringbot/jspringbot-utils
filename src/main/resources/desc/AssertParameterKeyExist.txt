@@ -1,0 +1,5 @@
+Asserts parameter key exist.
+
+
+| Parse URL                | http://jspringbot.org/search.html?a=0&b=hello&c=world&d=goodbye&e=https://myhomepage.com&a=1 |
+| Assert ParameterKeyExist | d                                                                                            |

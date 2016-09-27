@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 @Component
 @KeywordInfo(
         name = "Assert Path",
-        description = "Asserts URL Path.",
+        description = "classpath:desc/AssertPath.txt",
         parameters = {"path"})
 public class AssertPath extends AbstractURLKeyword {
 

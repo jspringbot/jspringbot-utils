@@ -1,0 +1,14 @@
+ Asserts URL Host.
+
+| Parse URL                | http://jspringbot.org/search.html?a=0&b=hello&c=world&d=goodbye&e=https://myhomepage.com&a=1 |                        |
+| Assert Protocol          | http                                                                                         |                        |
+| Assert Host              | jspringbot.org                                                                               |                        |
+| Assert Path              | /search.html                                                                                 |                        |
+| Assert Port              | -1                                                                                           |                        |
+| Assert ParameterCount    | 6                                                                                            |                        |
+| Assert ParameterKeyExist | d                                                                                            |                        |
+| Assert Parameter         | a                                                                                            | 0                      |
+| Assert Parameter         | a                                                                                            | 1                      |
+| Assert Parameter         | b                                                                                            | hello                  |
+| Assert Parameter         | c                                                                                            | world                  |
+| Assert Parameter         | e                                                                                            | https://myhomepage.com |

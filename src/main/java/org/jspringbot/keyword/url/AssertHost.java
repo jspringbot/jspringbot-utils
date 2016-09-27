@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 @Component
 @KeywordInfo(
         name = "Assert Host",
-        description = "Asserts URL Host.",
+        description = "classpath:desc/AssertHost.txt",
         parameters = {"host"})
 public class AssertHost extends AbstractURLKeyword {
 

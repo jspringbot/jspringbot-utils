@@ -26,7 +26,7 @@ import org.springframework.stereotype.Component;
 @Component
 @KeywordInfo(
         name = "Parse URL",
-        description = "Parses URL.",
+        description = "classpath:desc/ParseURL.txt",
         parameters = {"URL"})
 public class ParseURL extends AbstractURLKeyword {
 
