@@ -71,6 +71,11 @@ public class URLHelper {
         Validate.isTrue(parameters.containsKey(name));
     }
 
+    public void assertParameterKeyDoesNotExist(String name) {
+
+        Validate.isTrue(!parameters.containsKey(name));
+    }
+
     public void assertParameter(String name, String value) {
         List<String> values = parameters.get(name);
 
