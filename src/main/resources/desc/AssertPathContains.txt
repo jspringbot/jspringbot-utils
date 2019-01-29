@@ -1,0 +1,5 @@
+Asserts URL Path Contains.
+
+
+| Parse URL            | https://github.com/jspringbot/jspringbot-utils/commits/master |
+| Assert Path Contains | jspringbot-utils                                              |

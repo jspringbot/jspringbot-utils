@@ -1,0 +1,5 @@
+ Asserts URL Host Contains.
+
+| Parse URL                | http://jspringbot.org |                    |
+| Assert Protocol          | http                  |                    |
+| Assert Host Contains     | jspringbot.org        | www.jspringbot.org |

@@ -50,6 +50,20 @@ public class URLHelper {
         Validate.isTrue(StringUtils.equals(url.getHost(), host));
     }
 
+    public void assertHostContains(List<String> hosts) {
+
+        boolean containsHost = false;
+
+        for (String host:hosts) {
+            containsHost = StringUtils.contains(url.getHost(), host);
+            if (containsHost){
+                break;
+            }
+        }
+
+        Validate.isTrue(containsHost);
+    }
+
     public void assertPort(int port) {
         Validate.isTrue(url.getPort() == port);
     }
@@ -60,6 +74,10 @@ public class URLHelper {
 
     public void assertPath(String path) {
         Validate.isTrue(StringUtils.equals(url.getPath(), path));
+    }
+
+    public void assertPathContains(String path) {
+        Validate.isTrue(StringUtils.contains(url.getPath(), path));
     }
 
     public void assertParameterCount(int count) {
