@@ -47,6 +47,8 @@ public class URLHelper {
     }
 
     public void assertHost(String host) {
+        System.out.println("\n" + "host" + " " + url.getHost());
+
         Validate.isTrue(StringUtils.equals(url.getHost(), host));
     }
 
@@ -65,14 +67,20 @@ public class URLHelper {
     }
 
     public void assertPort(int port) {
+        System.out.println("\n" + "port" + " " + url.getPort());
+
         Validate.isTrue(url.getPort() == port);
     }
 
     public void assertProtocol(String protocol) {
+        System.out.println("\n" + "protocol" + " " + url.getProtocol());
+
         Validate.isTrue(StringUtils.equals(url.getProtocol(), protocol));
     }
 
     public void assertPath(String path) {
+        System.out.println("\n" + "path" + " " + url.getPath());
+
         Validate.isTrue(StringUtils.equals(url.getPath(), path));
     }
 
