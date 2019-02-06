@@ -85,10 +85,15 @@ public class URLHelper {
     }
 
     public void assertPathContains(String path) {
+        System.out.println("\n" + "path" + " " + url.getPath());
+
         Validate.isTrue(StringUtils.contains(url.getPath(), path));
     }
 
     public void assertParameterCount(int count) {
+
+        System.out.println("\n" + "parameter count" + " " + parameterList.size());
+
         Validate.isTrue(parameterList.size() == count);
     }
 
