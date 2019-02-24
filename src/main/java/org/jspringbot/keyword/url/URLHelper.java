@@ -21,6 +21,8 @@ public class URLHelper {
     private Map<String, List<String>> parameters;
 
     public void parse(String urlString) throws MalformedURLException {
+        System.out.println("URL String = " + urlString);
+
         url = new URL(urlString);
         parameterList = URLEncodedUtils.parse(url.getQuery(), Charset.forName("utf-8"));
         System.out.println("ParameterList = " + parameterList);

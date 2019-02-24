@@ -18,8 +18,12 @@
 
 package org.jspringbot.keyword.util;
 
-
 import org.junit.Test;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class UtilTest {
 
@@ -37,4 +41,70 @@ public class UtilTest {
         percentageShouldBe.execute(new Object[]{"50","52","2"});
         percentageShouldBe.execute(new Object[]{"50","48","2"});
     }
+
+    @Test
+    public void testFoundSessionToken() throws Exception {
+        InputStream is = new FileInputStream("src/test/resources/session-token.json");
+        BufferedReader buf = new BufferedReader(new InputStreamReader(is));
+        String line = buf.readLine();
+
+        StringBuilder sb = new StringBuilder();
+        while(line != null){
+            sb.append(line).append("\n");
+            line = buf.readLine();
+        }
+        String fileAsString = sb.toString();
+        String regex="(([A-Z0-9]){8}\\-([A-Z0-9]){4}\\-([A-Z0-9]){4}\\-([A-Z0-9]){4}\\-([A-Z0-9]){12})";
+        System.out.println("Contents : " + fileAsString);
+
+        Object[] objects = new Object[] {fileAsString,regex};
+
+        AssertNoMatchLines assertNoMatchLines = new AssertNoMatchLines();
+        try {
+            assertNoMatchLines.execute(objects);
+
+        } catch (Exception e) {
+            System.out.println("Test passed. Session token found");
+        }
+    }
+
+    @Test
+    public void testCountSessionToken() throws Exception {
+        InputStream is = new FileInputStream("src/test/resources/session-token.json");
+        BufferedReader buf = new BufferedReader(new InputStreamReader(is));
+        String line = buf.readLine();
+
+        StringBuilder sb = new StringBuilder();
+        while(line != null){
+            sb.append(line).append("\n");
+            line = buf.readLine();
+        }
+        String fileAsString = sb.toString();
+        String regex="(([A-Z0-9]){8}\\-([A-Z0-9]){4}\\-([A-Z0-9]){4}\\-([A-Z0-9]){4}\\-([A-Z0-9]){12})";
+        System.out.println("Contents : " + fileAsString);
+
+        Object[] objects = new Object[] {fileAsString,regex};
+
+        CountMatchedLines countMatchedLines = new CountMatchedLines();
+        countMatchedLines.execute(objects);
+    }
+
+    @Test
+    public void testAssertNoMatchLines() {
+        AssertNoMatchLines assertNoMatchLines = new AssertNoMatchLines();
+
+        String fileAsString = "test\n"+
+            "test123";
+        String regex="[0-9]{3}";
+
+        Object[] objects = new Object[] {fileAsString,regex};
+
+        try {
+            assertNoMatchLines.execute(objects);
+        } catch (Exception e) {
+            System.out.println("Test passed. 123 found in string.");
+        }
+
+    }
+
 }
